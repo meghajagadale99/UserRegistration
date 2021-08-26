@@ -16,6 +16,9 @@ public class UserValidator {
         String lastName = sc1.next();
         nameObj.lastnameVerification(lastName);
 
-
+        System.out.println("Enter a Email:");
+        Scanner sc3 = new Scanner(System.in);
+        String email = sc3.next();
+        nameObj.emailVerify(email);
     }
 }
