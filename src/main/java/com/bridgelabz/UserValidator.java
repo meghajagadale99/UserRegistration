@@ -20,5 +20,11 @@ public class UserValidator {
         Scanner sc3 = new Scanner(System.in);
         String email = sc3.next();
         nameObj.emailVerify(email);
+
+        System.out.println("Enter Mobile Number:");
+        Scanner sc4 = new Scanner(System.in);
+        String mo_number = sc4.next();
+        nameObj.mobileFormat(mo_number);
+
     }
 }
