@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 public class UserRegistrationTest {
     String first_name;
     String last_name;
+    String email;
 
     //Verify firstname
     public void firstnameVerification(String first_name) {
@@ -28,4 +29,5 @@ public class UserRegistrationTest {
         else
             System.out.println("Invalid name");
     }
+
 }

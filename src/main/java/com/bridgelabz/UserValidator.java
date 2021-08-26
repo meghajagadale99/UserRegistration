@@ -11,10 +11,11 @@ public class UserValidator {
         String firstName = sc.next();
         nameObj.firstnameVerification(firstName);
 
-        System.out.println("Enter Last Name=");
+        System.out.println("Enter Last Name:");
         Scanner sc1 = new Scanner(System.in);
         String lastName = sc1.next();
         nameObj.lastnameVerification(lastName);
+
 
     }
 }
