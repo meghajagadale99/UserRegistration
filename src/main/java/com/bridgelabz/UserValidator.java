@@ -30,6 +30,5 @@ public class UserValidator {
         Scanner sc5 = new Scanner(System.in);
         String password = sc5.next();
         nameObj.passwordVerify(password);
-
     }
 }

@@ -57,9 +57,10 @@ public class UserRegistrationTest {
         else
             System.out.println("Invalid Mobile Number");
     }
-    //check password has at least one upperCase and one numeric value
+
+    //check password has at least one upperCase, one numeric value and exactly one special character
     public void passwordVerify(String password) {
-        Pattern pattern_password = Pattern.compile("^(?=.{8,}$)([a-z]*)(?=.*?[A-Z])(?=.*?[0-9]).*$");
+        Pattern pattern_password = Pattern.compile("^(?=.{8,}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).*$");
         this.password = password;
         Matcher password_matcher = pattern_password.matcher(password);
 
@@ -67,7 +68,6 @@ public class UserRegistrationTest {
             System.out.println("valid password");
         else
             System.out.println("Invalid password");
-
     }
 
 }
