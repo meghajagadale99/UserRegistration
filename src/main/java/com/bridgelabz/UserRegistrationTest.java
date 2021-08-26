@@ -8,6 +8,7 @@ public class UserRegistrationTest {
     String last_name;
     String email;
     String mo_number;
+    String password;
 
     //Verify firstname
     public void firstnameVerification(String first_name) {
@@ -55,7 +56,18 @@ public class UserRegistrationTest {
             System.out.println("valid Mobile Number");
         else
             System.out.println("Invalid Mobile Number");
+    }
 
+    //  verify password
+    public void passwordVerify(String password) {
+        Pattern pattern_password = Pattern.compile("[A-Z,a-z,0-9]{8,}");
+        this.password = password;
+        Matcher password_matcher = pattern_password.matcher(password);
+
+        if(password_matcher.find() &&  password_matcher.group().equals(password))
+            System.out.println("valid password");
+        else
+            System.out.println("Invalid password");
 
     }
 
