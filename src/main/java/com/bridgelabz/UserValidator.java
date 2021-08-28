@@ -5,8 +5,10 @@ public class  UserValidator {
         System.out.println("Welcome to user registration file.");
 
         UserRegistrationTest firstName = new UserRegistrationTest();
+        UserRegistrationTest lastName = new UserRegistrationTest();
 
         firstName.checkPatternFirstName();
+        lastName.checkPatternLastName();
 
     }
 
