@@ -8,11 +8,12 @@ public class  UserValidator {
         UserRegistrationTest lastName = new UserRegistrationTest();
         UserRegistrationTest emailId = new UserRegistrationTest();
         UserRegistrationTest phoneNumber = new UserRegistrationTest();
+        UserRegistrationTest password = new UserRegistrationTest();
 
         firstName.checkPatternFirstName();
         lastName.checkPatternLastName();
         emailId.checkPatternEmailId();
         phoneNumber.checkPatternPhoneNumber();
-
+        password.checkPatternPassword();
     }
 }

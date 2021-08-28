@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 
 public class UserRegistrationTest {
+
     public void checkPatternFirstName() {
         String firstNamePattern = "^[A-Z]{1}[a-z]{2,}$";
         Scanner userInput = new Scanner(System.in);
@@ -48,5 +49,16 @@ public class UserRegistrationTest {
             System.out.println("Pattern match.");
         else
             System.out.println("pattern match fail!\nCountry code follow by space and 10 digit number");
+    }
+    public void checkPatternPassword() {
+        String passwordPattern = "^(?=.*\\d)([a-z])*(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("enter the Password: ");
+        String checkPattern = userInput.next();
+
+        if (Pattern.matches(passwordPattern, checkPattern))
+            System.out.println("Pattern match.");
+        else
+            System.out.println("pattern match fail! \nplease follow the pattern for right password");
     }
 }
