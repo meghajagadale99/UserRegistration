@@ -38,5 +38,15 @@ public class UserRegistrationTest {
         else
             System.out.println("pattern match fail!Email has 3 mandatory parts abc, bl, & co and 2 optional (xyz & in) with	precise @ and . positions");
     }
+    public void checkPatternPhoneNumber() {
+        String phoneNumberPattern = "[0-9]{2}[\\s][0-9]{10}$";
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("enter the PhoneNo: ");
+        String checkPattern = userInput.nextLine();
 
+        if (Pattern.matches(phoneNumberPattern, checkPattern))
+            System.out.println("Pattern match.");
+        else
+            System.out.println("pattern match fail!\nCountry code follow by space and 10 digit number");
+    }
 }
