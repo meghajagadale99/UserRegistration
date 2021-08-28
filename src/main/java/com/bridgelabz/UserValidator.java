@@ -6,10 +6,11 @@ public class  UserValidator {
 
         UserRegistrationTest firstName = new UserRegistrationTest();
         UserRegistrationTest lastName = new UserRegistrationTest();
+        UserRegistrationTest emailId = new UserRegistrationTest();
+
 
         firstName.checkPatternFirstName();
         lastName.checkPatternLastName();
-
+        emailId.checkPatternEmailId();
     }
-
 }
