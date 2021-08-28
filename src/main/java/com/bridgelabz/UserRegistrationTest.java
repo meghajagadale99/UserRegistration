@@ -2,7 +2,7 @@ package com.bridgelabz;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
-
+import java.util.ArrayList;
 
 public class UserRegistrationTest {
 
@@ -29,6 +29,33 @@ public class UserRegistrationTest {
             System.out.println("pattern match fail! \nLast name starts with Cap and has minimum 3 characters");
     }
     public void checkPatternEmailId() {
+
+        ArrayList<String> emails = new ArrayList<String>();
+        emails.add("abc@yahoo.com");
+        emails.add("abc-100@yahoo.com");
+        emails.add("abc.100@yahoo.com");
+        emails.add("abc111@abc.com");
+        emails.add("abc-100@abc.net");
+        emails.add("abc.100@abc.com.au");
+        emails.add("abc@1.com");
+        emails.add("abc@gmail.com");
+        emails.add("abc@gmail.com.com");
+        emails.add("abc+100@gmail.com");
+
+        emails.add("abc");
+        emails.add("abc@.com.my");
+        emails.add("abc123@gmail.a");
+        emails.add("abc123@.com");
+        emails.add("abc123@.com.com");
+        emails.add(".abc@abc.com");
+        emails.add("abc()*@gmail.com");
+        emails.add("abc@%*.com");
+        emails.add("abc..2002@gmail.com");
+        emails.add("abc.@gmail.com");
+        emails.add("abc@abc@gmail.com");
+        emails.add("abc@gmail.com.1a");
+        emails.add("abc@gmail.com.aa.au");
+
         String emailIdPattern = "^[a-zA-Z0-9]{1,}[.a-zA-Z0-9]*@[a-zA-Z0-9]{1,}((.){1}+)([a-z]{1,3}+)(.[a-z]{2})*$";
         Scanner userInput = new Scanner(System.in);
         System.out.println("enter the Email address: ");
