@@ -1,19 +1,13 @@
 package com.bridgelabz;
 
-public class UserValidator {
-    public static void main(String[] args) {
-        System.out.println("Welcome to user registration file.");
+public class UserValidator{
+    public static void main(String[] args){
+        UserRegistrationTest userValidator = new UserRegistrationTest();
+        userValidator.FirstNameCheck();
+        userValidator.LastNameCheck();
+        userValidator.EmailCheck();
+        userValidator.PhoneNumberCheck();
+        userValidator.PasswordCheck();
 
-        UserRegistrationTest firstName = new UserRegistrationTest();
-        UserRegistrationTest lastName = new UserRegistrationTest();
-        UserRegistrationTest emailId = new UserRegistrationTest();
-        UserRegistrationTest phoneNumber = new UserRegistrationTest();
-        UserRegistrationTest password = new UserRegistrationTest();
-
-        firstName.checkPatternFirstName();
-        lastName.checkPatternLastName();
-        emailId.checkPatternEmailId();
-        phoneNumber.checkPatternPhoneNumber();
-        password.checkPatternPassword();
     }
 }

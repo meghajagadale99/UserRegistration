@@ -2,131 +2,85 @@ package com.bridgelabz;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
-import java.util.ArrayList;
+
 
 public class UserRegistrationTest {
 
-    final String firstNamePattern = "^[A-Z]{1}[a-z]{2,}$";
-    final String lastNamePattern = "^[A-Z]{1}[a-z]{2,}$";
-    final String emailIdPattern = "^[a-zA-Z0-9]{1,}[.a-zA-Z0-9]*@[a-zA-Z0-9]{1,}((.){1}+)([a-z]{1,3}+)(.[a-z]{2})*$";
-    final String phoneNumberPattern = "[0-9]{2}[\\s][0-9]{10}$";
-    final String passwordPattern = "^(?=.*\\d)([a-z])*(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
+    final String NAME_PATTERN = "^[A-Z]{1}[a-z]{2,}$";
+    final String EMAIL_PATTERN = "^[a-zA-Z0-9]{1,}[.a-zA-Z0-9]*@[a-zA-Z0-9]{1,}((.){1}+)([a-z]{1,3}+)(.[a-z]{2})*$";
+    final String PHONE_NUMBER_PATTERN = "[0-9]{2}[\\s][0-9]{10}$";
+    final String PASSWORD_PATTERN = "^(?=.*\\d)([a-z])*(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
+    Scanner scanner = new Scanner(System.in);
 
-    public void checkPatternFirstName() {
-
+    UserInterface userInterface = (pattern, input) -> {
+        boolean result = Pattern.matches(pattern, input);
+        return result;
+    };
+    public void FirstNameCheck() {
+        System.out.println("enter FirstName");
+        String firstName = scanner.nextLine();
         try {
-            Scanner userInput = new Scanner(System.in);
-            System.out.println("enter the First Name: ");
-            String checkPattern = userInput.nextLine();
-
-            if (Pattern.matches(firstNamePattern, checkPattern))
-                System.out.println("Pattern match. Correct Input.");
+            if (!userInterface.ChackInputvalidation(NAME_PATTERN, firstName))
+                throw new UserDefineException("invalid first name");
             else
-                throw new UserDefineException("Please Follow the pattern And Enter a valid Frist name");
-            System.out.println("First name:- " + checkPattern);
-        }
-
-        catch (UserDefineException e) {
+                System.out.println("congratulation!!You follow the correct pattern.\nfirstname = " + firstName);
+        } catch (UserDefineException e) {
             System.out.println(e.errorMessage);
-            checkPatternFirstName();
+            FirstNameCheck();
         }
     }
-    public void checkPatternLastName() {
 
+    public void LastNameCheck() {
+        System.out.println("enter LastName");
+        String lastName = scanner.nextLine();
         try {
-            Scanner userInput = new Scanner(System.in);
-            System.out.println("enter the Last Name: ");
-            String checkPattern = userInput.next();
-
-            if (Pattern.matches(lastNamePattern, checkPattern))
-                System.out.println("Pattern match.");
+            if (!userInterface.ChackInputvalidation(NAME_PATTERN, lastName))
+                throw new UserDefineException("invalid last name");
             else
-                throw new UserDefineException("Please follow the pattern and enter a valid LastName");
-            System.out.println("Last name:- " + checkPattern);
-        }
-        catch (UserDefineException e) {
+                System.out.println("congratulation!!You follow the correct pattern.\nlastname = " + lastName);
+        } catch (UserDefineException e) {
             System.out.println(e.errorMessage);
-            checkPatternLastName();
+            LastNameCheck();
         }
     }
-    public void checkPatternEmailId() {
 
-        ArrayList<String> emails = new ArrayList<String>();
-        emails.add("abc@yahoo.com");
-        emails.add("abc-100@yahoo.com");
-        emails.add("abc.100@yahoo.com");
-        emails.add("abc111@abc.com");
-        emails.add("abc-100@abc.net");
-        emails.add("abc.100@abc.com.au");
-        emails.add("abc@1.com");
-        emails.add("abc@gmail.com");
-        emails.add("abc@gmail.com.com");
-        emails.add("abc+100@gmail.com");
-
-        emails.add("abc");
-        emails.add("abc@.com.my");
-        emails.add("abc123@gmail.a");
-        emails.add("abc123@.com");
-        emails.add("abc123@.com.com");
-        emails.add(".abc@abc.com");
-        emails.add("abc()*@gmail.com");
-        emails.add("abc@%*.com");
-        emails.add("abc..2002@gmail.com");
-        emails.add("abc.@gmail.com");
-        emails.add("abc@abc@gmail.com");
-        emails.add("abc@gmail.com.1a");
-        emails.add("abc@gmail.com.aa.au");
-
+    public void EmailCheck() {
+        System.out.println("enter Email");
+        String email = scanner.nextLine();
         try {
-            Scanner userInput = new Scanner(System.in);
-            System.out.println("enter the Email address: ");
-            String checkPattern = userInput.next();
-
-            if (Pattern.matches(emailIdPattern, checkPattern))
-                System.out.println("Pattern match.");
+            if (!userInterface.ChackInputvalidation(EMAIL_PATTERN, email))
+                throw new UserDefineException("invalid email");
             else
-                throw new UserDefineException("Please follow the pattern and enter a valid Email");
-            System.out.println("Email:- " + checkPattern);
-        }
-        catch (UserDefineException e) {
+                System.out.println("congratulation!!You follow the correct pattern.\nemail = " + email);
+        } catch (UserDefineException e) {
             System.out.println(e.errorMessage);
-            checkPatternEmailId();
+            EmailCheck();
         }
     }
-    public void checkPatternPhoneNumber() {
-
+    public void PhoneNumberCheck() {
+        System.out.println("enter PhoneNumber");
+        String phoneNumber = scanner.nextLine();
         try {
-            Scanner userInput = new Scanner(System.in);
-            System.out.println("enter the PhoneNo: ");
-            String checkPattern = userInput.nextLine();
-
-            if (Pattern.matches(phoneNumberPattern, checkPattern))
-                System.out.println("Pattern match.");
+            if (!userInterface.ChackInputvalidation(PHONE_NUMBER_PATTERN, phoneNumber))
+                throw new UserDefineException("invalid phone number");
             else
-                throw new UserDefineException("Please follow the pattern and enter a valid PhoneNumber");
-            System.out.println("Phone Number:- " + checkPattern);
-        }
-        catch (UserDefineException e) {
+                System.out.println("congratulation!!You follow the correct pattern.\nphonenumber = " + phoneNumber);
+        } catch (UserDefineException e) {
             System.out.println(e.errorMessage);
-            checkPatternPhoneNumber();
+            PhoneNumberCheck();
         }
     }
-    public void checkPatternPassword() {
-
+    public void PasswordCheck() {
+        System.out.println("enter password");
+        String password = scanner.nextLine();
         try {
-            Scanner userInput = new Scanner(System.in);
-            System.out.println("enter the Password: ");
-            String checkPattern = userInput.next();
-
-            if (Pattern.matches(passwordPattern, checkPattern))
-                System.out.println("Pattern match.");
+            if (!userInterface.ChackInputvalidation(PASSWORD_PATTERN, password))
+                throw new UserDefineException("invalid password");
             else
-                throw new UserDefineException("Please follow the pattern and enter a valid Password");
-            System.out.println("Password:- " + checkPattern);
-        }
-        catch (UserDefineException e) {
+                System.out.println("congratulation!!You follow the correct pattern.\npassword = " + password);
+        } catch (UserDefineException e) {
             System.out.println(e.errorMessage);
-            checkPatternPassword();
+            PasswordCheck();
         }
     }
 }
